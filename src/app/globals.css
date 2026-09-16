@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --scrollbar-thumb: #cbd5e1;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 999px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.prose-lesson :where(p) {
+  margin: 0.75em 0;
+  line-height: 1.7;
+}
+
+.prose-lesson :where(h1, h2, h3) {
+  font-weight: 700;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.prose-lesson :where(ul, ol) {
+  padding-left: 1.4em;
+  margin: 0.6em 0;
+}
+
+.prose-lesson :where(li) {
+  margin: 0.3em 0;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
